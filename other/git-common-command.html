@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>git常用命令 | Andy&#39;s Blog | 高山流水遇知音，彩云追月得知己。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="git,命令">
+    <meta name="description" content="git常用命令总结。">
+<meta name="keywords" content="git,命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="https://iszhouhua.github.io/other/git-common-command.html">
+<meta property="og:site_name" content="Andy&#39;s Blog">
+<meta property="og:description" content="git常用命令总结。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-15T13:48:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git常用命令">
+<meta name="twitter:description" content="git常用命令总结。">
+    
+        <link rel="alternate" type="application/atom+xml" title="Andy&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">周华</h5>
+          <a href="mailto:iszhouhua@163.com" title="iszhouhua@163.com" class="mail">iszhouhua@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/iszhouhua" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">git常用命令</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">git常用命令</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-14T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018年10月15日
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/other/">其他</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本操作"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">查看</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">添加</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#提交"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">提交</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">删除</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#撤销"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">撤销</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#历史记录"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">历史记录</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#远程操作"><span class="post-toc-number">2.</span> <span class="post-toc-text">远程操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看-1"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">查看</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#拉取"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">拉取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推送"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">推送</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除-1"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">删除</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分支"><span class="post-toc-number">3.</span> <span class="post-toc-text">分支</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看-2"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">查看</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">添加</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推送-1"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">推送</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#合并"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">合并</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除-2"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">删除</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#忽略文件"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">忽略文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看配置"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">查看配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置用户信息"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">设置用户信息</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-其他/git常用命令"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">git常用命令</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年10月15日 00:00:00" datetime="2018-10-14T16:00:00.000Z"  itemprop="datePublished">2018年10月15日</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/other/">其他</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看当前版本库状态</span></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># 简化的版本库状态。--s是--short的简写</span></span><br><span class="line">$ git status -s</span><br><span class="line"><span class="comment"># 查看尚未暂存的文件更新了哪些部分</span></span><br><span class="line">$ git diff</span><br><span class="line"><span class="comment"># 查看已暂存文件中更新的内容(Git 1.6.1以下版本使用 git diff --cached)</span></span><br><span class="line">$ git diff --staged</span><br></pre></td></tr></table></figure>
+<h3 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加所有后缀为.c的文件到暂存区</span></span><br><span class="line">$ git add *.c</span><br><span class="line"><span class="comment"># 递归的添加当前目录所有文件到暂存区</span></span><br><span class="line">$ git add .</span><br><span class="line"><span class="comment"># 添加LICENSE文件到暂存区</span></span><br><span class="line">$ git add LICENSE</span><br><span class="line"><span class="comment"># 添加所有改动文件到暂存区</span></span><br><span class="line">$ git add --all</span><br></pre></td></tr></table></figure>
+<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提交暂存区的代码</span></span><br><span class="line">$ git commit -m <span class="string">'commit message'</span></span><br><span class="line"><span class="comment"># 跳过暂存区直接提交所有已追踪的文件</span></span><br><span class="line">$ git commit -a -m <span class="string">'commit message'</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除file.md文件，本地文件也会一同删除</span></span><br><span class="line">$ git rm file.md</span><br><span class="line"><span class="comment"># 删除版本控制中的file.md文件，保留本地文件</span></span><br><span class="line">$ git rm --cached file.md</span><br><span class="line"><span class="comment"># 强制删除file.md文件，用于防止误删还没有添加到快照的数据</span></span><br><span class="line">$ git rm -f file.md</span><br><span class="line"><span class="comment"># 删除 log 目录下扩展名为 .log 的所有文件</span></span><br><span class="line">$ git rm <span class="built_in">log</span>/\*.<span class="built_in">log</span></span><br><span class="line"><span class="comment"># 重命名文件，相当于执行了以下三条命令</span></span><br><span class="line"><span class="comment"># mv README.md README</span></span><br><span class="line"><span class="comment"># git rm README.md</span></span><br><span class="line"><span class="comment"># git add README</span></span><br><span class="line">$ git mv README.md README</span><br></pre></td></tr></table></figure>
+<h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改最后一次提交</span></span><br><span class="line">$ git commit --amend</span><br><span class="line"><span class="comment"># 取消暂存 benchmarks.rb 文件</span></span><br><span class="line">$ git reset HEAD benchmarks.rb</span><br><span class="line"><span class="comment"># 撤销对 benchmarks.rb 文件的修改</span></span><br><span class="line">$ git checkout -- benchmarks.rb</span><br></pre></td></tr></table></figure>
+<h3 id="历史记录"><a href="#历史记录" class="headerlink" title="历史记录"></a>历史记录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有的更新</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># -p，用来显示每次提交的内容差异。  -2 表示仅显示最近两次提交</span></span><br><span class="line">$ git <span class="built_in">log</span> -p -2</span><br><span class="line"><span class="comment"># 查看每次提交的简略的统计信息</span></span><br><span class="line">$ git <span class="built_in">log</span> --<span class="built_in">stat</span></span><br><span class="line"><span class="comment"># 以指定格式输出历史记录(oneline，short，full，fuller）</span></span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line"><span class="comment"># 格式化输出历史记录</span></span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">"%h - %an, %ar : %s"</span></span><br><span class="line"><span class="comment"># --graph显示 ASCII 图形表示的分支合并历史。</span></span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">"%h %s"</span> --graph</span><br></pre></td></tr></table></figure>
+<p><strong><code>git log</code> 的常用选项</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-p</code></td>
+<td>按补丁格式显示每个更新之间的差异。</td>
+</tr>
+<tr>
+<td><code>--stat</code></td>
+<td>显示每次更新的文件修改统计信息。</td>
+</tr>
+<tr>
+<td><code>--shortstat</code></td>
+<td>只显示 –stat 中最后的行数修改添加移除统计。</td>
+</tr>
+<tr>
+<td><code>--name-only</code></td>
+<td>仅在提交信息后显示已修改的文件清单。</td>
+</tr>
+<tr>
+<td><code>--name-status</code></td>
+<td>显示新增、修改、删除的文件清单。</td>
+</tr>
+<tr>
+<td><code>--abbrev-commit</code></td>
+<td>仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。</td>
+</tr>
+<tr>
+<td><code>--relative-date</code></td>
+<td>使用较短的相对时间显示（比如，“2 weeks ago”）。</td>
+</tr>
+<tr>
+<td><code>--graph</code></td>
+<td>显示 ASCII 图形表示的分支合并历史。</td>
+</tr>
+<tr>
+<td><code>--pretty</code></td>
+<td>使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>限制 <code>git log</code> 输出的选项</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-(n)</code></td>
+<td>仅显示最近的 n 条提交</td>
+</tr>
+<tr>
+<td><code>--since</code>, <code>--after</code></td>
+<td>仅显示指定时间之后的提交。</td>
+</tr>
+<tr>
+<td><code>--until</code>, <code>--before</code></td>
+<td>仅显示指定时间之前的提交。</td>
+</tr>
+<tr>
+<td><code>--author</code></td>
+<td>仅显示指定作者相关的提交。</td>
+</tr>
+<tr>
+<td><code>--committer</code></td>
+<td>仅显示指定提交者相关的提交。</td>
+</tr>
+<tr>
+<td><code>--grep</code></td>
+<td>仅显示含指定关键字的提交</td>
+</tr>
+<tr>
+<td><code>-S</code></td>
+<td>仅显示添加或移除了某个关键字的提交</td>
+</tr>
+</tbody>
+</table>
+<p> <strong><code>git log --pretty=format</code> 常用的选项</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%H</code></td>
+<td>提交对象（commit）的完整哈希字串</td>
+</tr>
+<tr>
+<td><code>%h</code></td>
+<td>提交对象的简短哈希字串</td>
+</tr>
+<tr>
+<td><code>%T</code></td>
+<td>树对象（tree）的完整哈希字串</td>
+</tr>
+<tr>
+<td><code>%t</code></td>
+<td>树对象的简短哈希字串</td>
+</tr>
+<tr>
+<td><code>%P</code></td>
+<td>父对象（parent）的完整哈希字串</td>
+</tr>
+<tr>
+<td><code>%p</code></td>
+<td>父对象的简短哈希字串</td>
+</tr>
+<tr>
+<td><code>%an</code></td>
+<td>作者（author）的名字</td>
+</tr>
+<tr>
+<td><code>%ae</code></td>
+<td>作者的电子邮件地址</td>
+</tr>
+<tr>
+<td><code>%ad</code></td>
+<td>作者修订日期（可以用 –date= 选项定制格式）</td>
+</tr>
+<tr>
+<td><code>%ar</code></td>
+<td>作者修订日期，按多久以前的方式显示</td>
+</tr>
+<tr>
+<td><code>%cn</code></td>
+<td>提交者（committer）的名字</td>
+</tr>
+<tr>
+<td><code>%ce</code></td>
+<td>提交者的电子邮件地址</td>
+</tr>
+<tr>
+<td><code>%cd</code></td>
+<td>提交日期</td>
+</tr>
+<tr>
+<td><code>%cr</code></td>
+<td>提交日期，按多久以前的方式显示</td>
+</tr>
+<tr>
+<td><code>%s</code></td>
+<td>提交说明</td>
+</tr>
+</tbody>
+</table>
+<h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><h3 id="查看-1"><a href="#查看-1" class="headerlink" title="查看"></a>查看</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 origin 仓库信息</span></span><br><span class="line">$ git remote show origin</span><br><span class="line"><span class="comment"># 查看远程库的简短名字</span></span><br><span class="line">$ git remote</span><br><span class="line"><span class="comment"># 显示对应的克隆地址。-v 是 --verbose 的简写</span></span><br><span class="line">$ git remote -v</span><br></pre></td></tr></table></figure>
+<h3 id="拉取"><a href="#拉取" class="headerlink" title="拉取"></a>拉取</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 克隆libgit2</span></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/libgit2/libgit2</span><br><span class="line"><span class="comment"># 克隆libgit2并命名为mylibgit</span></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/libgit2/libgit2 mylibgit</span><br><span class="line"><span class="comment"># 以 ssh 协议克隆仓库</span></span><br><span class="line">$ git <span class="built_in">clone</span> ssh://user@server/project.git</span><br><span class="line"><span class="comment"># 添加指定地址的远程仓库并命名为pb</span></span><br><span class="line">$ git remote add pb git://github.com/paulboone/ticgit.git</span><br><span class="line"><span class="comment"># 抓取pb仓库的数据</span></span><br><span class="line">$ git fetch pb</span><br></pre></td></tr></table></figure>
+<h3 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把本地的 master 分支推送到 origin 服务器上</span></span><br><span class="line">$ git push origin master</span><br><span class="line"><span class="comment"># 强行推送本地代码到服务器 --f是--force的简写</span></span><br><span class="line">git push --f</span><br></pre></td></tr></table></figure>
+<h3 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除本地的paul仓库</span></span><br><span class="line">$ git remote rm paul</span><br><span class="line"><span class="comment"># 修改远程仓库在本地的简称，把 pb 改成 paul</span></span><br><span class="line">$ git remote rename pb paul</span><br></pre></td></tr></table></figure>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h3 id="查看-2"><a href="#查看-2" class="headerlink" title="查看"></a>查看</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有分支</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看各分支最后一次提交信息</span></span><br><span class="line">$ git branch -v</span><br><span class="line"><span class="comment"># 查看哪些分支已被并入当前分支</span></span><br><span class="line">$ git branch --merged</span><br><span class="line"><span class="comment"># 查看哪些分支没有并入当前分支</span></span><br><span class="line">$ git branch --no-merged</span><br></pre></td></tr></table></figure>
+<h3 id="添加-1"><a href="#添加-1" class="headerlink" title="添加"></a>添加</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建一个 testing 分支</span></span><br><span class="line">$ git branch testing</span><br><span class="line"><span class="comment"># 切换到 testing 分支</span></span><br><span class="line">$ git checkout testing</span><br><span class="line"><span class="comment"># 新建并切换到 iss53 分支</span></span><br><span class="line">$ git checkout -b iss53</span><br></pre></td></tr></table></figure>
+<h3 id="推送-1"><a href="#推送-1" class="headerlink" title="推送"></a>推送</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 推送本地的 serverfix 分支到 origin 远程仓库</span></span><br><span class="line">$ git push origin serverfix</span><br><span class="line"><span class="comment"># 推送本地的 serverfix 分支到 origin 远程仓库的 awesomebranch 分支</span></span><br><span class="line">$ git push origin serverfix:awesomebranch</span><br></pre></td></tr></table></figure>
+<h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 合并 hotfix 分支到当前分支</span></span><br><span class="line">$ git merge hotfix</span><br><span class="line"><span class="comment"># 将 server 分支变基到 master</span></span><br><span class="line">$ git rebase master server</span><br><span class="line"><span class="comment"># 取出 client 分支，找出 client 分支和 server 分支的共同祖先之后的变化，</span></span><br><span class="line"><span class="comment"># 然后把它们在 master 上重演一遍</span></span><br><span class="line">$ git rebase --onto master server client</span><br></pre></td></tr></table></figure>
+<h3 id="删除-2"><a href="#删除-2" class="headerlink" title="删除"></a>删除</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除 hotfix 分支</span></span><br><span class="line">$ git branch -d hotfix</span><br><span class="line"><span class="comment"># 强制删除 testing 分支</span></span><br><span class="line">git branch -D testing、</span><br><span class="line"><span class="comment"># 删除远程仓库的 serverfix 分支</span></span><br><span class="line">$ git push origin :serverfix</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h3><p>文件 <code>.gitignore</code> 的格式规范：</p>
+<ul>
+<li>所有空行或者以 <code>＃</code> 开头的行都会被 Git 忽略。</li>
+<li>可以使用标准的 glob 模式匹配。</li>
+<li>匹配模式可以以（<code>/</code>）开头防止递归。</li>
+<li>匹配模式可以以（<code>/</code>）结尾指定目录。</li>
+<li>要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（<code>!</code>）取反。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 忽略所有以.o或.a结尾的文件</span></span><br><span class="line">*.[oa]</span><br><span class="line"><span class="comment"># 忽略所有以波浪符（~）结尾的文件</span></span><br><span class="line">*~</span><br><span class="line"><span class="comment"># 跟踪lib.a，即使上面忽略了这个文件</span></span><br><span class="line">!lib.a</span><br><span class="line"><span class="comment"># 只忽略当前目录中的TODO文件，不忽略subdir/TODO</span></span><br><span class="line">/TODO</span><br><span class="line"><span class="comment"># 忽略build目录中的所有文件</span></span><br><span class="line">build/</span><br><span class="line"><span class="comment"># 忽略doc/notes.txt，但不忽略doc/server/arch.txt</span></span><br><span class="line">doc/*.txt</span><br><span class="line"><span class="comment"># 忽略doc目录中的所有.pdf文件</span></span><br><span class="line">doc/**/*.pdf</span><br></pre></td></tr></table></figure>
+<h3 id="查看配置"><a href="#查看配置" class="headerlink" title="查看配置"></a>查看配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看所有git配置</span></span><br><span class="line">$ git config --list</span><br><span class="line"><span class="comment"># 查看user.name的配置</span></span><br><span class="line">$ git config user.name</span><br></pre></td></tr></table></figure>
+<h3 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置用户名</span></span><br><span class="line">$ git config --global user.name <span class="string">"Your Name"</span></span><br><span class="line"><span class="comment"># 设置邮箱</span></span><br><span class="line">$ git config --global user.email <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">Git - Book</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-15T13:48:17.000Z" itemprop="dateUpdated">2018年10月15日 21:48:17</time>
+</span><br>
+
+
+        
+        本文为<a href="https://iszhouhua.github.io" target="_blank" rel="external">Andy&#39;s Blog</a>原创文章，转载请注明出处：<a href="https://iszhouhua.github.io/other/git-common-command.html" target="_blank" rel="external">https://iszhouhua.github.io/other/git-common-command.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://iszhouhua.github.io">
+            <img src="/img/avatar.jpg" alt="周华">
+            周华
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">命令</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://iszhouhua.github.io/other/git-common-command.html&title=《git常用命令》 — Andy's Blog&pic=https://iszhouhua.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://iszhouhua.github.io/other/git-common-command.html&title=《git常用命令》 — Andy's Blog&source=周华的个人博客。相交易得,知音难觅;千金易得,知己难求!" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://iszhouhua.github.io/other/git-common-command.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git常用命令》 — Andy's Blog&url=https://iszhouhua.github.io/other/git-common-command.html&via=https://iszhouhua.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://iszhouhua.github.io/other/git-common-command.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/design-pattern/strategy-pattern.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">策略模式</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢主隆恩~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>周华 &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://iszhouhua.github.io/other/git-common-command.html&title=《git常用命令》 — Andy's Blog&pic=https://iszhouhua.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://iszhouhua.github.io/other/git-common-command.html&title=《git常用命令》 — Andy's Blog&source=周华的个人博客。相交易得,知音难觅;千金易得,知己难求!" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://iszhouhua.github.io/other/git-common-command.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git常用命令》 — Andy's Blog&url=https://iszhouhua.github.io/other/git-common-command.html&via=https://iszhouhua.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://iszhouhua.github.io/other/git-common-command.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://iszhouhua.github.io/other/git-common-command.html" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"display":{"height":350},"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hibiki.model.json"},"log":false});</script></body>
+</html>
